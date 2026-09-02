@@ -1,0 +1,23 @@
+{
+  "name": "nocfer",
+  "owner": {
+    "name": "Ferdinando Nocera",
+    "url": "https://github.com/nocfer"
+  },
+  "description": "Ferdinando Nocera's Claude Code skills, as an installable plugin.",
+  "plugins": [
+    {
+      "name": "nocfer-skills",
+      "source": "./",
+      "description": "Agent skills for real engineering: harvest PR-review feedback into durable memory, and run a pre-PR consistency review.",
+      "category": "engineering",
+      "keywords": [
+        "engineering",
+        "skills",
+        "code-review",
+        "pr-feedback",
+        "memory"
+      ]
+    }
+  ]
+}

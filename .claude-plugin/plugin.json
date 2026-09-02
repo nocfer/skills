@@ -1,0 +1,22 @@
+{
+  "name": "nocfer-skills",
+  "version": "0.1.0",
+  "description": "Agent skills for real engineering: harvest PR-review feedback into durable memory, and run a pre-PR consistency review.",
+  "author": {
+    "name": "Ferdinando Nocera",
+    "url": "https://github.com/nocfer"
+  },
+  "repository": "https://github.com/nocfer/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "engineering",
+    "skills",
+    "code-review",
+    "pr-feedback",
+    "memory"
+  ],
+  "skills": [
+    "./skills/consistency-review",
+    "./skills/distill-reviews"
+  ]
+}
