@@ -7,11 +7,11 @@ Codex CLI, Cline, Gemini CLI and other agents.
 
 ## Layout
 
-- `skills/<name>/SKILL.md` — the portable skills. This is the source of truth.
-- `.claude-plugin/` — a Claude Code plugin/marketplace wrapper (an adapter for
-  one agent), so Claude users can install the whole set with `/plugin`. It does
-  not make the repo Claude-only.
-- `install.sh` — symlinks the skills into each agent's skills directory.
+- `skills/<name>/SKILL.md` — the portable skills. This is the source of truth,
+  and all the `skills` CLI (`npx skills add nocfer/skills`) needs.
+- `.claude-plugin/` — an optional Claude Code plugin/marketplace wrapper, so
+  Claude users can alternatively install the set with `/plugin`. It does not make
+  the repo Claude-only.
 
 ## Working in this repo
 
@@ -25,6 +25,6 @@ Codex CLI, Cline, Gemini CLI and other agents.
 
 ## Install
 
-See `README.md`. Short version: `./install.sh`, or for Claude Code
-`/plugin marketplace add nocfer/skills` then
+See `README.md`. Short version: `npx skills add nocfer/skills`, or for Claude
+Code `/plugin marketplace add nocfer/skills` then
 `/plugin install nocfer-skills@nocfer`.
