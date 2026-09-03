@@ -1,9 +1,8 @@
 ---
 context: fork
-disable-model-invocation: true
 name: consistency-review
 description: |
-  Review the current branch's changes for consistency with the codebase: prior art / duplication, sibling-pattern divergence, naming and concept clarity, shared-infra blast radius, and standalone merge-safety. NOT a bug hunt — use it before opening a PR to catch "this doesn't fit how we do things here" findings that human review would otherwise catch. Use when the user says "consistency review", "review for consistency", or "pre-PR review".
+  Pre-PR review of the current branch's changes for consistency with the codebase: prior art / duplication, sibling-pattern divergence, naming and concept clarity, shared-infra blast radius, and standalone merge-safety. NOT a bug hunt — catches "this doesn't fit how we do things here" findings that human review would otherwise catch. Use when the user wants a consistency review, to review changes for consistency, or a pre-PR review before opening a PR.
 ---
 
 # Consistency Review
@@ -129,6 +128,10 @@ For each finding:
 
 ## Anti-noise rules (as important as the checks)
 
+- **Stay in scope.** Every finding must trace to THIS change — code the diff
+  introduces, or existing code the change makes newly redundant or wrong (e.g. a
+  supersession it creates). A preexisting problem in code this change leaves untouched
+  is out of scope: leave it out of the findings even when it's worth knowing.
 - Do NOT flag anything a formatter/linter owns.
 - Do NOT propose new abstractions, generalizations, or "future-proofing" — simplest
   shippable version wins; flagging the ABSENCE of an abstraction is never a finding.

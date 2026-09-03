@@ -6,20 +6,24 @@ Claude Code, Cursor, Codex, Gemini CLI and [others](https://github.com/vercel-la
 
 ## Skills
 
-The two `harvest-*` skills are a family: each turns recurring mistakes into
-something durable, differing only in *source*.
+All three are model-invoked: the agent can reach for them automatically when the
+task fits, or you can type them by name. The two `harvest-*` skills are a family:
+each turns recurring mistakes into something durable, differing only in *source*.
 
-- **harvest-reviews** — Harvest the PR-review feedback you *received* on the
-  current repo and turn recurring themes into durable auto-memory rules, so the
-  agent stops earning the same review comment twice. Runs incrementally via a
-  per-project watermark. Invoke with `/harvest-reviews`.
-- **harvest-session** — Scan the current session for mistakes that could recur
-  and cost a future agent time or tokens, then propose the lightest fix for each
-  — a memory, a rule, a hook, or a skill — and apply the ones you pick. Invoke
-  with `/harvest-session`.
-- **consistency-review** — A pre-PR review for consistency with the codebase
-  (prior art, sibling-pattern divergence, naming, shared-infra blast radius),
-  not a bug hunt. Invoke with `/consistency-review`.
+- **[consistency-review](./skills/consistency-review/SKILL.md)** — A pre-PR review
+  of the current branch's changes for consistency with the codebase: prior art /
+  duplication, sibling-pattern divergence, naming and concept clarity, shared-infra
+  blast radius, and standalone merge-safety. Not a bug hunt — catches "this doesn't
+  fit how we do things here" findings a human reviewer would otherwise write. Invoke
+  with `/consistency-review`.
+- **[harvest-reviews](./skills/harvest-reviews/SKILL.md)** — Harvest the PR-review
+  feedback you *received* on the current repo and turn recurring themes into durable
+  auto-memory rules, so the agent stops earning the same review comment twice. Runs
+  incrementally via a per-project watermark. Invoke with `/harvest-reviews`.
+- **[harvest-session](./skills/harvest-session/SKILL.md)** — Scan the current session
+  for mistakes that could recur and cost a future agent time or tokens, then propose
+  the lightest fix for each — a memory, a rule, a hook, or a skill — and apply the
+  ones you pick. Invoke with `/harvest-session`.
 
 ## Install
 
@@ -58,9 +62,8 @@ Then invoke a skill by name, e.g. `/harvest-reviews`.
 ## Notes on portability
 
 The `SKILL.md` bodies are standard. A few frontmatter fields are Claude-specific
-and simply ignored by other agents: `allowed-tools`, and `context: fork` /
-`disable-model-invocation` on `consistency-review`. The skills still work; only
-Claude acts on those hints.
+and simply ignored by other agents: `allowed-tools`, and `context: fork` on
+`consistency-review`. The skills still work; only Claude acts on those hints.
 
 ## License
 
