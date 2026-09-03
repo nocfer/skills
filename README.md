@@ -6,17 +6,20 @@ Claude Code, Cursor, Codex, Gemini CLI and [others](https://github.com/vercel-la
 
 ## Skills
 
-- **distill-reviews** — Harvest the PR-review feedback you *received* on the
+The two `harvest-*` skills are a family: each turns recurring mistakes into
+something durable, differing only in *source*.
+
+- **harvest-reviews** — Harvest the PR-review feedback you *received* on the
   current repo and turn recurring themes into durable auto-memory rules, so the
   agent stops earning the same review comment twice. Runs incrementally via a
-  per-project watermark. Invoke with `/distill-reviews`.
+  per-project watermark. Invoke with `/harvest-reviews`.
+- **harvest-session** — Scan the current session for mistakes that could recur
+  and cost a future agent time or tokens, then propose the lightest fix for each
+  — a memory, a rule, a hook, or a skill — and apply the ones you pick. Invoke
+  with `/harvest-session`.
 - **consistency-review** — A pre-PR review for consistency with the codebase
   (prior art, sibling-pattern divergence, naming, shared-infra blast radius),
   not a bug hunt. Invoke with `/consistency-review`.
-- **harvest-lessons** — Scan the current session for mistakes that could recur
-  and cost a future agent time or tokens, then propose the lightest fix for each
-  — a memory, a rule, a hook, or a skill — and apply the ones you pick. Invoke
-  with `/harvest-lessons`.
 
 ## Install
 
@@ -28,7 +31,7 @@ it fetches only the skill folder and symlinks it into whichever agents you pick:
 npx skills add nocfer/skills
 
 # or a specific one, to a specific agent, globally
-npx skills add nocfer/skills --skill distill-reviews -g -a claude-code
+npx skills add nocfer/skills --skill harvest-reviews -g -a claude-code
 ```
 
 This repo is private; the CLI uses your existing Git / GitHub CLI / SSH auth, so
@@ -45,11 +48,11 @@ native `/plugin` update management:
 /plugin install nocfer-skills@nocfer
 ```
 
-Then invoke a skill by name, e.g. `/distill-reviews`.
+Then invoke a skill by name, e.g. `/harvest-reviews`.
 
 ## Requirements
 
-- `distill-reviews` needs the [`gh`](https://cli.github.com) CLI authenticated
+- `harvest-reviews` needs the [`gh`](https://cli.github.com) CLI authenticated
   as you, and a project with an agent memory directory.
 
 ## Notes on portability

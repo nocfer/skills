@@ -1,6 +1,6 @@
 {
   "name": "nocfer-skills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Agent skills for real engineering: harvest lessons from PR reviews and your own sessions into memory, rules or hooks, and run a pre-PR consistency review.",
   "author": {
     "name": "Ferdinando Nocera",
@@ -18,7 +18,7 @@
   ],
   "skills": [
     "./skills/consistency-review",
-    "./skills/distill-reviews",
-    "./skills/harvest-lessons"
+    "./skills/harvest-reviews",
+    "./skills/harvest-session"
   ]
 }

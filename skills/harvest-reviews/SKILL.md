@@ -1,5 +1,5 @@
 ---
-name: distill-reviews
+name: harvest-reviews
 description: Turn PR review feedback you received into durable memory rules, so the agent stops repeating the same review mistakes. Use when the user wants to harvest, summarise, or distil PR review comments into rules, notes, or lessons for Claude Code.
 allowed-tools: Bash(gh search prs:*), Bash(gh api:*), Bash(gh repo view:*), Bash(cat:*), Bash(jq:*), Bash(date:*), Read, Write, Edit
 ---
@@ -19,7 +19,7 @@ comments.
 
 `$MEM` below is your project's auto-memory directory — the path named in your
 system prompt's memory section. The watermark lives there too, as
-`$MEM/.distill-reviews-state.json`, so state travels with the project.
+`$MEM/.harvest-reviews-state.json`, so state travels with the project.
 
 ## Step 1 — Resolve repo, login, and watermark
 
@@ -31,7 +31,7 @@ ME=$(gh api user -q .login)
 echo "repo=$REPO me=$ME"
 ```
 
-Read `$MEM/.distill-reviews-state.json` for `lastRun`; if the file is missing, use
+Read `$MEM/.harvest-reviews-state.json` for `lastRun`; if the file is missing, use
 `2000-01-01T00:00:00Z` (first run reads everything).
 
 ## Step 2 — Fetch the feedback since the watermark
@@ -103,7 +103,7 @@ Link related lessons with `[[other-slug]]`. Keep one lesson per file.
 
 ## Step 5 — Advance the watermark
 
-Write `$MEM/.distill-reviews-state.json` as `{"lastRun": "<now, ISO 8601 UTC>"}`
+Write `$MEM/.harvest-reviews-state.json` as `{"lastRun": "<now, ISO 8601 UTC>"}`
 (`date -u +%Y-%m-%dT%H:%M:%SZ`). This is what makes the next run incremental.
 
 **Done when** the state file holds the current timestamp.

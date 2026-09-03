@@ -1,5 +1,5 @@
 ---
-name: harvest-lessons
+name: harvest-session
 description: Scan this session's history for mistakes that could recur and cost a future agent time or tokens, then propose the right fix for each — a memory, a rule, a hook, or a skill. Use when the user wants lessons learned from the conversation, a session retrospective, or to capture what went wrong so it doesn't happen again.
 allowed-tools: Read, Write, Edit, Grep, Bash(date:*)
 ---
@@ -13,7 +13,7 @@ keeps the lessons that will recur, and proposes the lightest remedy that actuall
 prevents each one. It proposes; it writes nothing until you pick.
 
 For lessons that come specifically from **PR review comments you received**, use
-`distill-reviews` instead — it harvests that source incrementally and always lands
+`harvest-reviews` instead — it harvests that source incrementally and always lands
 in memory. This skill covers the *session* and chooses across all remedy types.
 
 `$MEM` below is your project's auto-memory directory — the path named in your
