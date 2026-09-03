@@ -68,17 +68,18 @@ and simply ignored by other agents: `allowed-tools`, and `context: fork` on
 
 Issues and pull requests are welcome. To propose a change:
 
-1. **Fork** the repo and **clone** your fork locally.
-2. Create a branch off `main` and make your change. Keep each skill a
+1. Create a branch off `main` and make your change. Keep each skill a
    self-contained `skills/<name>/` directory, and follow the conventions in
    [AGENTS.md](AGENTS.md) (standard `SKILL.md` frontmatter; add new skills to
    `.claude-plugin/plugin.json`).
-3. **Push** the branch to your fork and **open a pull request** against `main`,
-   describing what changed and why.
+2. **Open a pull request** against `main`, describing what changed and why.
 
 `main` is protected: every PR needs an approving review before it can merge, so a
 maintainer will take a look. For anything larger than a small fix, open an issue
 first so we can align before you invest the work.
+
+Without write access to this repo you can't push a branch here — fork it, push
+your branch to the fork, and open the PR from there.
 
 ## License
 
