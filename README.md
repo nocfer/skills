@@ -13,6 +13,10 @@ Claude Code, Cursor, Codex, Gemini CLI and [others](https://github.com/vercel-la
 - **consistency-review** — A pre-PR review for consistency with the codebase
   (prior art, sibling-pattern divergence, naming, shared-infra blast radius),
   not a bug hunt. Invoke with `/consistency-review`.
+- **harvest-lessons** — Scan the current session for mistakes that could recur
+  and cost a future agent time or tokens, then propose the lightest fix for each
+  — a memory, a rule, a hook, or a skill — and apply the ones you pick. Invoke
+  with `/harvest-lessons`.
 
 ## Install
 
