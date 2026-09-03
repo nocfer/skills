@@ -64,6 +64,20 @@ The `SKILL.md` bodies are standard. A few frontmatter fields are Claude-specific
 and simply ignored by other agents: `allowed-tools`, and `context: fork` on
 `consistency-review`. The skills still work; only Claude acts on those hints.
 
+## Contributing
+
+Issues and pull requests are welcome. To propose a change:
+
+1. **Fork** the repo and create a branch off `main`.
+2. Make your change. Keep each skill a self-contained `skills/<name>/` directory,
+   and follow the conventions in [AGENTS.md](AGENTS.md) (standard `SKILL.md`
+   frontmatter; add new skills to `.claude-plugin/plugin.json`).
+3. **Open a pull request** describing what changed and why.
+
+`main` is protected: every PR needs an approving review before it can merge, so a
+maintainer will take a look. For anything larger than a small fix, open an issue
+first so we can align before you invest the work.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
