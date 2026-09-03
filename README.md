@@ -38,8 +38,7 @@ npx skills add nocfer/skills
 npx skills add nocfer/skills --skill harvest-reviews -g -a claude-code
 ```
 
-This repo is private; the CLI uses your existing Git / GitHub CLI / SSH auth, so
-the same command works once you have access. Update or remove later with
+The repo is public, so no auth or access is needed. Update or remove later with
 `npx skills update` / `npx skills remove`.
 
 ### Claude Code — as a plugin (optional)
